@@ -28,7 +28,7 @@ namespace FinalProject
             if (File.Exists(_filePath))
             {
                 string[] lines = File.ReadAllLines(_filePath);
-                Console.WriteLine("Statistics:");
+                Console.WriteLine("\nStatistics:");
                 foreach (var line in lines)
                 {
                     Console.WriteLine(line);
