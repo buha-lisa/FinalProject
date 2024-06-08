@@ -27,7 +27,7 @@ namespace FinalProject
             Console.WriteLine($"Time: {time} seconds");
             Console.WriteLine($"Mistypes: {mistypes}/{currentText.Length}");
 
-            var stats = new TestStatistics("statistics.txt");
+            var stats = new TestStatistics("C:\\Users\\user\\Desktop\\statistics.txt");
             stats.Save(time, mistypes);
         }
 

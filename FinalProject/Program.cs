@@ -7,7 +7,7 @@ namespace FinalProject
         {
             var menu = new TestMenu();
             var test = new TestLogic();
-            var stats = new TestStatistics("statistics.txt");
+            var stats = new TestStatistics("C:\\Users\\user\\Desktop\\statistics.txt");
 
             while (true)
             {
