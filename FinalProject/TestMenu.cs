@@ -10,10 +10,11 @@ namespace FinalProject
             Console.WriteLine("1. Easy mode with words");
             Console.WriteLine("2. Normal mode with sentences");
             Console.WriteLine("3. Hard mode with text");
+            Console.WriteLine("4. Display statistics");
             Console.WriteLine("0. Exit");
             int.TryParse(Console.ReadLine(), out int level);
 
-            if (level >= 0 && level <= 3)
+            if (level >= 0 && level <= 4)
             {
                 return level;
             }

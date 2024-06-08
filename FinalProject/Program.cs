@@ -7,6 +7,7 @@ namespace FinalProject
         {
             var menu = new TestMenu();
             var test = new TestLogic();
+            var stats = new TestStatistics("statistics.txt");
 
             while (true)
             {
@@ -23,6 +24,9 @@ namespace FinalProject
                         break;
                     case 3:
                         test.RunTest(_texts, "text");
+                        break;
+                    case 4:
+                        stats.Display();
                         break;
                 }
             }
