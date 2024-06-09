@@ -3,7 +3,7 @@ namespace FinalProject
 {
     public class TestStatistics
     {
-        private readonly string _filePath;
+        private string _filePath;
         public TestStatistics(string filePath)
         {
             _filePath = filePath;
@@ -38,6 +38,11 @@ namespace FinalProject
             {
                 Console.WriteLine("No statistics available.");
             }
+        }
+        public void ChangeFilePath(string newPath)
+        {
+            _filePath = newPath;
+            Console.WriteLine($"File path changed to: {_filePath}");
         }
     }
 }

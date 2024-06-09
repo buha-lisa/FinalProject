@@ -4,7 +4,7 @@ namespace FinalProject
 {
     public class TestLogic
     {
-        public void RunTest(string[] texts, string level)
+        public void RunTest(string[] texts, string level, TestStatistics stats)
         {
             Random rand = new Random();
             string currentText = texts[rand.Next(texts.Length)];
@@ -26,8 +26,9 @@ namespace FinalProject
 
             Console.WriteLine($"Time: {time} seconds");
             Console.WriteLine($"Mistypes: {mistypes}/{currentText.Length}");
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            Console.WriteLine($"\nMistypes Showing: {_mistypesShow(currentText, userInput)}");
 
-            var stats = new TestStatistics("C:\\Users\\user\\Desktop\\statistics.txt");
             stats.Save(time, mistypes);
         }
 
@@ -46,6 +47,34 @@ namespace FinalProject
 
             mistypes += Math.Abs(original.Length - input.Length);
             return mistypes;
+        }
+
+        private string _mistypesShow(string original, string input) 
+        {
+            int minLength = Math.Min(original.Length, input.Length);
+            char[] highlighted = new char[original.Length];
+
+            for (int i = 0; i < minLength; i++)
+            {
+                if (original[i] != input[i])
+                {
+                    highlighted[i] = original[i]; 
+                }
+                else
+                {
+                    highlighted[i] = '*';
+                }
+            }
+            if (original.Length > input.Length)
+            {
+                for (int i = input.Length; i < original.Length; i++)
+                {
+                    highlighted[i] = original[i];
+                }
+            }
+
+            string mistakesShow = new string(highlighted);
+            return mistakesShow;
         }
     }
 }

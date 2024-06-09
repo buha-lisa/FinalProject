@@ -17,16 +17,29 @@ namespace FinalProject
                 switch (choice)
                 {
                     case 1:
-                        test.RunTest(_words, "word");
+                        test.RunTest(_words, "word", stats);
+                        Console.WriteLine("Press ENTER to continue");
+                        string str1 = Console.ReadLine();
                         break;
                     case 2:
-                        test.RunTest(_sentences, "sentence");
+                        test.RunTest(_sentences, "sentence", stats);
+                        Console.WriteLine("Press ENTER to continue");
+                        string str2 = Console.ReadLine();
                         break;
                     case 3:
-                        test.RunTest(_texts, "text");
+                        test.RunTest(_texts, "text", stats);
+                        Console.WriteLine("Press ENTER to continue");
+                        string str3 = Console.ReadLine();
                         break;
                     case 4:
+                        Console.Write("Enter new file path: ");
+                        string newPath = Console.ReadLine();
+                        stats.ChangeFilePath(newPath);
+                        break;
+                    case 5:
                         stats.Display();
+                        Console.WriteLine("Press ENTER to continue");
+                        string str4 = Console.ReadLine();
                         break;
                 }
             }
