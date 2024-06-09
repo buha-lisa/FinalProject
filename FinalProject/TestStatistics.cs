@@ -41,7 +41,14 @@ namespace FinalProject
         }
         public void ChangeFilePath(string newPath)
         {
-            _filePath = newPath;
+            if (!newPath.EndsWith(".txt"))
+            {
+                _filePath = newPath + ".txt";
+            }
+            else
+            {
+                _filePath = newPath;
+            }
             Console.WriteLine($"File path changed to: {_filePath}");
         }
     }
