@@ -5,9 +5,10 @@ namespace FinalProject
     {
         static void Main()
         {
+            string filePath = "C:\\Users\\user\\Desktop\\statistics.txt";
             var menu = new TestMenu();
             var test = new TestLogic();
-            var stats = new TestStatistics("C:\\Users\\user\\Desktop\\statistics.txt");
+            var stats = new TestStatistics(filePath);
 
             while (true)
             {
@@ -33,8 +34,8 @@ namespace FinalProject
                         break;
                     case 4:
                         Console.Write("Enter new file path: ");
-                        string newPath = Console.ReadLine();
-                        stats.ChangeFilePath(newPath);
+                        filePath = Console.ReadLine();
+                        stats.ChangeFilePath(filePath);
                         break;
                     case 5:
                         stats.Display();
